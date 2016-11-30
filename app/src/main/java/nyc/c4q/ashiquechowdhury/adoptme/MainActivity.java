@@ -1,22 +1,24 @@
 package nyc.c4q.ashiquechowdhury.adoptme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
     ImageView randomAnimalImageView;
+    EditText zipCodeEditText;
     private static final int BUNNY = R.drawable.bunny;
     private static final int CAT = R.drawable.cat;
     private static final int DOG = R.drawable.dogs;
     private static final int HEDGEHOG = R.drawable.hedgehog;
     private static final int TIGER = R.drawable.tiger;
     private static final int[] animalArray;
-
     static {
         animalArray = new int[]{BUNNY, CAT, DOG, HEDGEHOG, TIGER};
     }
@@ -27,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         randomAnimalImageView = (ImageView) findViewById(R.id.animalpics_imageView);
+        zipCodeEditText = (EditText) findViewById(R.id.zipcode_editText);
+        if(savedInstanceState!=null){
+            zipCodeEditText.setText(savedInstanceState.getInt("nyc.c4q.adoptme.ZIPCODE"));
+        }
         cycleThroughPictures(animalArray, randomAnimalImageView);
 
     }
@@ -50,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSubmit(View view) {
+        Intent intent = new Intent(this, AnimalsActivity.class);
+        startActivity(intent);
+    }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putInt("nyc.c4q.adoptme.ZIPCODE", Integer.parseInt(zipCodeEditText.getText().toString()));
+        super.onSaveInstanceState(savedInstanceState);
     }
 }
