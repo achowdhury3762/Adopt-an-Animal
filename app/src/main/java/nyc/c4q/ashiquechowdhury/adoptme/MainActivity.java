@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         randomAnimalImageView = (ImageView) findViewById(R.id.animalpics_imageView);
         zipCodeEditText = (EditText) findViewById(R.id.zipcode_editText);
         if(savedInstanceState!=null){
-            zipCodeEditText.setText(savedInstanceState.getInt("nyc.c4q.adoptme.ZIPCODE"));
+            zipCodeEditText.setText(String.valueOf(savedInstanceState.getInt("nyc.c4q.adoptme.ZIPCODE")));
         }
         cycleThroughPictures(animalArray, randomAnimalImageView);
 
@@ -62,7 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
-        savedInstanceState.putInt("nyc.c4q.adoptme.ZIPCODE", Integer.parseInt(zipCodeEditText.getText().toString()));
+        if(zipCodeEditText.getText().toString().equals("")){
+            savedInstanceState.putInt("nyc.c4q.adoptme.ZIPCODE", 11377);
+        }
+        else {
+            savedInstanceState.putInt("nyc.c4q.adoptme.ZIPCODE", Integer.parseInt(zipCodeEditText.getText().toString()));
+        }
         super.onSaveInstanceState(savedInstanceState);
     }
 }
