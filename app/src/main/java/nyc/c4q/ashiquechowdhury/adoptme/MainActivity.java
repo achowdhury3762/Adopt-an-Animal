@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int HEDGEHOG = R.drawable.hedgehog;
     private static final int TIGER = R.drawable.tiger;
     private static final int[] animalArray;
+    public static final String ZIPCODE = "nyc.c4q.ashiquechowdhury.adoptme.ZIPCODE";
     static {
         animalArray = new int[]{BUNNY, CAT, DOG, HEDGEHOG, TIGER};
     }
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         randomAnimalImageView = (ImageView) findViewById(R.id.animalpics_imageView);
         zipCodeEditText = (EditText) findViewById(R.id.zipcode_editText);
         if(savedInstanceState!=null){
-            zipCodeEditText.setText(String.valueOf(savedInstanceState.getInt("nyc.c4q.adoptme.ZIPCODE")));
+            zipCodeEditText.setText(String.valueOf(savedInstanceState.getInt(ZIPCODE)));
         }
         cycleThroughPictures(animalArray, randomAnimalImageView);
 
@@ -56,17 +57,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSubmit(View view) {
+        int zipCode = Integer.parseInt(zipCodeEditText.getText().toString());
         Intent intent = new Intent(this, AnimalsActivity.class);
+        intent.putExtra(ZIPCODE, zipCode);
         startActivity(intent);
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
         if(zipCodeEditText.getText().toString().equals("")){
-            savedInstanceState.putInt("nyc.c4q.adoptme.ZIPCODE", 11377);
+            savedInstanceState.putInt(ZIPCODE, 11377);
         }
         else {
-            savedInstanceState.putInt("nyc.c4q.adoptme.ZIPCODE", Integer.parseInt(zipCodeEditText.getText().toString()));
+            savedInstanceState.putInt(ZIPCODE, Integer.parseInt(zipCodeEditText.getText().toString()));
         }
         super.onSaveInstanceState(savedInstanceState);
     }

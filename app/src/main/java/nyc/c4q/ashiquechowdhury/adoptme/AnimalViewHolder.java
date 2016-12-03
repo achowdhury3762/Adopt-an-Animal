@@ -12,14 +12,8 @@ import nyc.c4q.ashiquechowdhury.adoptme.model.PetInformationModel;
 
 /**
  * Created by ashiquechowdhury on 12/2/16.
-
- <!--Phone phone;-->
- <!--State state;-->
- <!--Email email;-->
- <!--City city;-->
- <!--Zip zip;-->
- <!--Address address1;-->
  */
+
 public class AnimalViewHolder extends RecyclerView.ViewHolder {
     private ImageView petImageView;
     private TextView phoneTV;
@@ -33,7 +27,7 @@ public class AnimalViewHolder extends RecyclerView.ViewHolder {
         super(view);
         petImageView = (ImageView) itemView.findViewById(R.id.petImageView);
         phoneTV = (TextView) itemView.findViewById(R.id.phoneTextView);
-        addressTV = (TextView) itemView.findViewById(R.id.addressTextVoew);
+        addressTV = (TextView) itemView.findViewById(R.id.addressTextView);
         emailTV = (TextView) itemView.findViewById(R.id.emailTextView);
         stateTV = (TextView) itemView.findViewById(R.id.stateTextView);
         cityTV = (TextView) itemView.findViewById(R.id.cityTextView);

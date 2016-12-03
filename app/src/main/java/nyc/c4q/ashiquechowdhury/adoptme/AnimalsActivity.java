@@ -1,5 +1,6 @@
 package nyc.c4q.ashiquechowdhury.adoptme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,25 +24,30 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AnimalsActivity extends AppCompatActivity {
     RecyclerView mAnimalRecyclerView;
     RecyclerView mPictureRecyclerView;
+    int zipCode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animals);
+
+        Intent intent = getIntent();
+        zipCode = intent.getIntExtra(MainActivity.ZIPCODE, 11377);
 
         mAnimalRecyclerView = (RecyclerView) findViewById(R.id.animal_recycler);
         mAnimalRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         mPictureRecyclerView = (RecyclerView) findViewById(R.id.animalpicture_recycler);
         mPictureRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        callRetrofit();
+
+        callRetrofit(zipCode);
     }
 
-    private void callRetrofit() {
+    private void callRetrofit(int zipCode) {
         Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).baseUrl("http://api.petfinder.com/").build();
         PetFinderAPI petAPI = retrofit.create(PetFinderAPI.class);
 
-//        Call<Petfinder> myPetfinder = petAPI.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json" , "11377");
-        Call<RealPetfinder> myPetfinder = petAPI.getPets();
+        Call<RealPetfinder> myPetfinder = petAPI.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json" , String.valueOf(zipCode));
         myPetfinder.enqueue(new Callback<RealPetfinder>() {
             @Override
             public void onResponse(Call<RealPetfinder> call, Response<RealPetfinder> response) {

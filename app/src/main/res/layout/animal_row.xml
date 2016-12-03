@@ -1,49 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<ImageView
-    android:layout_gravity="center_horizontal"
-    android:id="@+id/petImageView"
-    android:layout_width="230dp"
-    android:layout_height="200dp" />
-    <TextView
-        android:text = "PHONE"
-        android:id="@+id/phoneTextView"
-        android:fontFamily="serif-monospace"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp" />
-    <TextView
-        android:text = "PHONE"
-        android:id="@+id/stateTextView"
-        android:fontFamily="serif-monospace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp" />
-    <TextView
-        android:text = "PHONE"
-        android:id="@+id/emailTextView"
-        android:fontFamily="serif-monospace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp" />
-    <TextView
-        android:text = "PHONE"
-        android:id="@+id/cityTextView"
-        android:fontFamily="serif-monospace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp" />
-    <TextView
-        android:text = "PHONE"
-        android:id="@+id/zipTextView"
-        android:fontFamily="serif-monospace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    android:orientation="vertical">
 
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="40sp"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:text="CONTACT INFO"/>
+
+    <ImageView
+        android:id="@+id/petImageView"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal" />
+
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="PHONE"
+        android:textColor="#000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="PHONE"
+        android:textColor="#000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="PHONE"
+        android:textColor="#000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="PHONE"
+        android:textColor="#000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/stateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="PHONE"
+        android:textColor="#000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/zipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="PHONE"
+        android:textColor="#000"
+        android:textStyle="bold" />
 
 </LinearLayout>
