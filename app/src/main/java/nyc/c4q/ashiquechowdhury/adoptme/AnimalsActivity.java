@@ -58,7 +58,7 @@ public class AnimalsActivity extends AppCompatActivity {
                 callRetrofit(zipCode,"pig");
                 break;
             case "Furry/Small":
-                callRetrofit(zipCode,"furrysmall");
+                callRetrofit(zipCode,"smallfurry");
                 break;
         }
 
