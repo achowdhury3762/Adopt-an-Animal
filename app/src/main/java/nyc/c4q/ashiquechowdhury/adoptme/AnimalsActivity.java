@@ -45,10 +45,12 @@ public class AnimalsActivity extends AppCompatActivity {
 
     private void callRetrofit(int zipCode) {
         Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).baseUrl("http://api.petfinder.com/").build();
-        PetFinderAPI petAPI = retrofit.create(PetFinderAPI.class);
-
-        Call<RealPetfinder> myPetfinder = petAPI.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json" , String.valueOf(zipCode));
-        myPetfinder.enqueue(new Callback<RealPetfinder>() {
+        ApiClient petAPIClient = ApiClient.getInstance();
+        Call<RealPetfinder> myPetfinderCall = petAPIClient.getAllPetsInformation(zipCode);
+//        PetFinderAPI petAPI = retrofit.create(PetFinderAPI.class);
+//
+//        Call<RealPetfinder> myPetfinder = petAPI.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json" , String.valueOf(zipCode), "100");
+        myPetfinderCall.enqueue(new Callback<RealPetfinder>() {
             @Override
             public void onResponse(Call<RealPetfinder> call, Response<RealPetfinder> response) {
                 RealPetfinder petFinder = response.body();
