@@ -1,6 +1,7 @@
 package nyc.c4q.ashiquechowdhury.adoptme;
 
-import okhttp3.ResponseBody;
+import nyc.c4q.ashiquechowdhury.adoptme.model.Petfinder;
+import nyc.c4q.ashiquechowdhury.adoptme.model.RealPetfinder;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -12,5 +13,8 @@ import retrofit2.http.Query;
 //?key=591201d638c591f60b82a65aaed3bffa&location=11377&format=json
 public interface PetFinderAPI {
     @GET("pet.find")
-    Call<ResponseBody> getPetsByZipCode(@Query("key") String apiKey, @Query("format") String formatType, @Query("location") String zipCode);
+    Call<Petfinder> getPetsByZipCode(@Query("key") String apiKey, @Query("format") String formatType, @Query("location") String zipCode);
+
+    @GET("pet.find?key=591201d638c591f60b82a65aaed3bffa&location=11377&format=json")
+    Call<RealPetfinder> getPets();
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/petImageView"
+    android:layout_width="200dp"
+    android:layout_height="200dp" />
+    <TextView
+        android:text = "PHONE"
+        android:fontFamily="cursive"
+        android:id="@+id/phoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+    <TextView
+        android:text = "PHONE"
+        android:id="@+id/stateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+    <TextView
+        android:text = "PHONE"
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+    <TextView
+        android:text = "PHONE"
+        android:id="@+id/cityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+    <TextView
+        android:text = "PHONE"
+        android:id="@+id/zipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+    <TextView
+        android:text = "PHONE"
+        android:id="@+id/addressTextVoew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+
+</LinearLayout>
+
+
+    <!--Phone phone;-->
+    <!--State state;-->
+    <!--Email email;-->
+    <!--City city;-->
+    <!--Zip zip;-->
+    <!--Address address1;-->
