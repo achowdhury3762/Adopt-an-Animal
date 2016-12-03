@@ -1,4 +1,4 @@
-package nyc.c4q.ashiquechowdhury.adoptme;
+package nyc.c4q.ashiquechowdhury.adoptme.animalpicturerecycler;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+
+import nyc.c4q.ashiquechowdhury.adoptme.R;
 
 /**
  * Created by ashiquechowdhury on 12/2/16.

@@ -1,4 +1,4 @@
-package nyc.c4q.ashiquechowdhury.adoptme;
+package nyc.c4q.ashiquechowdhury.adoptme.animalpicturerecycler;
 
 /**
  * Created by ashiquechowdhury on 12/2/16.

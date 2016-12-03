@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import nyc.c4q.ashiquechowdhury.adoptme.animalcontactrecycler.AnimalAdapter;
+import nyc.c4q.ashiquechowdhury.adoptme.animalpicturerecycler.AnimalPictureAdapter;
+import nyc.c4q.ashiquechowdhury.adoptme.animalpicturerecycler.PetImages;
 import nyc.c4q.ashiquechowdhury.adoptme.model.Contact;
 import nyc.c4q.ashiquechowdhury.adoptme.model.PetInformationModel;
 import nyc.c4q.ashiquechowdhury.adoptme.model.RealPetfinder;

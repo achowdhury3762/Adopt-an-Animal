@@ -1,4 +1,4 @@
-package nyc.c4q.ashiquechowdhury.adoptme;
+package nyc.c4q.ashiquechowdhury.adoptme.animalcontactrecycler;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import nyc.c4q.ashiquechowdhury.adoptme.R;
 import nyc.c4q.ashiquechowdhury.adoptme.model.PetInformationModel;
 
 /**
