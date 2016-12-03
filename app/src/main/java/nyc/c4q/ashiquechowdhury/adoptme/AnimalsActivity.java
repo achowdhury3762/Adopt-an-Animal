@@ -15,8 +15,6 @@ import nyc.c4q.ashiquechowdhury.adoptme.model.RealPetfinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by ashiquechowdhury on 11/29/16.
@@ -24,7 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AnimalsActivity extends AppCompatActivity {
     RecyclerView mAnimalRecyclerView;
     RecyclerView mPictureRecyclerView;
-    int zipCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +29,8 @@ public class AnimalsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animals);
 
         Intent intent = getIntent();
-        zipCode = intent.getIntExtra(MainActivity.ZIPCODE, 11377);
+        int zipCode = intent.getIntExtra(MainActivity.ZIPCODE, 11377);
+        String animalChoice = intent.getStringExtra(MainActivity.SELECTEDANIMAL);
 
         mAnimalRecyclerView = (RecyclerView) findViewById(R.id.animal_recycler);
         mAnimalRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -40,16 +38,40 @@ public class AnimalsActivity extends AppCompatActivity {
         mPictureRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
-        callRetrofit(zipCode);
+        switch(animalChoice){
+            case "All Animals":
+                callRetrofit(zipCode, "All Animals");
+                break;
+            case "Rabbit":
+                callRetrofit(zipCode, "rabbit");
+                break;
+            case "Cat":
+                callRetrofit(zipCode, "cat");
+                break;
+            case "Dog":
+                callRetrofit(zipCode, "dog");
+                break;
+            case "Horse":
+                callRetrofit(zipCode,"horse");
+                break;
+            case "Pig":
+                callRetrofit(zipCode,"pig");
+                break;
+            case "Furry/Small":
+                callRetrofit(zipCode,"furrysmall");
+                break;
+        }
+
     }
 
-    private void callRetrofit(int zipCode) {
-        Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).baseUrl("http://api.petfinder.com/").build();
+    private void callRetrofit(int zipCode, String animalChoice) {
         ApiClient petAPIClient = ApiClient.getInstance();
-        Call<RealPetfinder> myPetfinderCall = petAPIClient.getAllPetsInformation(zipCode);
-//        PetFinderAPI petAPI = retrofit.create(PetFinderAPI.class);
-//
-//        Call<RealPetfinder> myPetfinder = petAPI.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json" , String.valueOf(zipCode), "100");
+        Call<RealPetfinder> myPetfinderCall;
+        if(animalChoice.equals("All Animals")){
+            myPetfinderCall = petAPIClient.getAllPetsInformation(zipCode);
+        }
+        else
+            myPetfinderCall = petAPIClient.getAllPetsInformation(zipCode, animalChoice);
         myPetfinderCall.enqueue(new Callback<RealPetfinder>() {
             @Override
             public void onResponse(Call<RealPetfinder> call, Response<RealPetfinder> response) {

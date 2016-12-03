@@ -5,17 +5,6 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.ashiquechowdhury.adoptme.MainActivity">
 
-    <Spinner
-        android:id="@+id/animal_spinner"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </Spinner>
-    <ImageView
-        android:id="@+id/animalpics_imageView"
-        android:layout_below="@+id/zipcode_editText"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
     <EditText
         android:id="@+id/zipcode_editText"
         android:layout_alignParentLeft="true"
@@ -23,6 +12,19 @@
         android:layout_height="wrap_content"
         android:hint="Enter Zip Code"
         android:inputType="number"/>
+    <Spinner
+        android:id="@+id/animal_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_below="@+id/submit_Bttn">
+    </Spinner>
+    <ImageView
+        android:layout_below="@id/animal_spinner"
+        android:id="@+id/animalpics_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/submit_Bttn"
         android:onClick="onClickSubmit"
@@ -34,5 +36,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:id="@+id/textView" />
 </RelativeLayout>

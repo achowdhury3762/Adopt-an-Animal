@@ -30,4 +30,8 @@ public class ApiClient {
     public Call<RealPetfinder> getAllPetsInformation(int zipCode){
         return petFinderService.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json", String.valueOf(zipCode), "100");
     }
+
+    public Call<RealPetfinder> getAllPetsInformation(int zipCode, String animalChoice){
+        return petFinderService.getPetsByZipCode("591201d638c591f60b82a65aaed3bffa", "json", String.valueOf(zipCode), "100", animalChoice);
+    }
 }

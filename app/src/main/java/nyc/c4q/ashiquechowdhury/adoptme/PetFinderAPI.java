@@ -12,4 +12,8 @@ import retrofit2.http.Query;
 public interface PetFinderAPI {
     @GET("pet.find")
     Call<RealPetfinder> getPetsByZipCode(@Query("key") String apiKey, @Query("format") String formatType, @Query("location") String zipCode, @Query("count") String count);
+
+    @GET("pet.find")
+    Call<RealPetfinder> getPetsByZipCode(@Query("key") String apiKey, @Query("format") String formatType, @Query("location") String zipCode, @Query("count") String count, @Query("animal") String animalChoice);
+
 }
