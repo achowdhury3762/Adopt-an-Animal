@@ -20,6 +20,4 @@ public class AnimalPictureViewHolder extends RecyclerView.ViewHolder{
     public void bind(PetImages petImages) {
         Picasso.with(itemView.getContext()).load(petImages.getPetImagesURL()).fit().into(animalImage);
     }
-
-
 }

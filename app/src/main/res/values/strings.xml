@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AdoptMe</string>
+    <string-array name="animals_array">
+        <item>Bunnies</item>
+        <item>Dogs</item>
+        <item>Cats</item>
+
+    </string-array>
 </resources>

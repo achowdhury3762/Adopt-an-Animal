@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     ImageView randomAnimalImageView;
     EditText zipCodeEditText;
     private static final int BUNNY = R.drawable.bunny;
@@ -35,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
             zipCodeEditText.setText(String.valueOf(savedInstanceState.getInt(ZIPCODE)));
         }
         cycleThroughPictures(animalArray, randomAnimalImageView);
-
+        Spinner spinner = (Spinner) findViewById(R.id.animal_spinner);
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.animals_array, android.R.layout.simple_spinner_item);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(this);
     }
 
     //PictureArray should be drawable
@@ -72,5 +80,16 @@ public class MainActivity extends AppCompatActivity {
             savedInstanceState.putInt(ZIPCODE, Integer.parseInt(zipCodeEditText.getText().toString()));
         }
         super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+        String choice = adapterView.getItemAtPosition(pos).toString();
+        Log.d("ads", "Choice");
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

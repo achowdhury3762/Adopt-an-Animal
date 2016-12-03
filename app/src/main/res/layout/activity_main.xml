@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.ashiquechowdhury.adoptme.MainActivity">
 
+    <Spinner
+        android:id="@+id/animal_spinner"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Spinner>
     <ImageView
         android:id="@+id/animalpics_imageView"
         android:layout_below="@+id/zipcode_editText"
