@@ -79,12 +79,18 @@ public class AnimalsActivity extends AppCompatActivity {
                 List<PetInformationModel> petNearbyList = new ArrayList<PetInformationModel>();
                 List<PetImages> petImages = new ArrayList<PetImages>();
                 for (int i = 0; i < petFinder.getPetfinder().getPets().getPet().size(); i++) {
-                    String imageURL = petFinder.getPetfinder().getPets().getPet().get(i).getMedia().getPhotos().getPhoto().get(1).get$t();
-                    Contact petContact = petFinder.getPetfinder().getPets().getPet().get(i).getContact();
-                    if (imageURL != null && petContact != null) {
+                    String imageURL;
+                    Contact petContact;
+                    try{
+                        imageURL = petFinder.getPetfinder().getPets().getPet().get(i).getMedia().getPhotos().getPhoto().get(1).get$t();
+                        petContact = petFinder.getPetfinder().getPets().getPet().get(i).getContact();
+                    }
+                    catch(NullPointerException e){
+                        continue;
+                    }
                         petNearbyList.add(new PetInformationModel(petContact, imageURL));
                         petImages.add(new PetImages(imageURL));
-                    }
+
                 }
                 if (petNearbyList != null) {
                     mAnimalRecyclerView.setAdapter(new AnimalAdapter(petNearbyList));
