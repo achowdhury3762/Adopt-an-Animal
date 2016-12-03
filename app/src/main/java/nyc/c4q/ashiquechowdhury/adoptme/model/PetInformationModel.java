@@ -7,6 +7,13 @@ public class PetInformationModel {
     private String petPictureURL;
     private Contact petContact;
 
+    public String getPetPictureURL() {
+        return petPictureURL;
+    }
+
+    public Contact getPetContact() {
+        return petContact;
+    }
     public PetInformationModel(Contact contact, String petPictureURL){
         this.petPictureURL = petPictureURL;
         petContact = contact;

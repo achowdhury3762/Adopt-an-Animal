@@ -6,7 +6,7 @@ package nyc.c4q.ashiquechowdhury.adoptme.model;
 public class State {
     private String $t;
 
-    public String get$t() {
+    public String getTheState() {
         return $t;
     }
 }

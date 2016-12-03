@@ -29,7 +29,7 @@ public class AnimalAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         AnimalViewHolder viewHolder = (AnimalViewHolder) holder;
-        AnimalViewHolder.bind(petInformationList.get(position));
+        viewHolder.bind(petInformationList.get(position));
     }
 
     @Override

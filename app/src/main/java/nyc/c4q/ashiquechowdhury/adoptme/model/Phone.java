@@ -6,7 +6,7 @@ package nyc.c4q.ashiquechowdhury.adoptme.model;
 public class Phone {
     private String $t;
 
-    public String get$t() {
+    public String getPhone() {
         return $t;
     }
 }

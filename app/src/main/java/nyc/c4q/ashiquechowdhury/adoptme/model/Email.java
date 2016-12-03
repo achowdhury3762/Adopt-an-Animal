@@ -6,7 +6,7 @@ package nyc.c4q.ashiquechowdhury.adoptme.model;
 public class Email {
     private String $t;
 
-    public String get$t() {
+    public String getEmail() {
         return $t;
     }
 }

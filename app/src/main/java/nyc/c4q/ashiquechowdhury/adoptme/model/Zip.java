@@ -6,7 +6,7 @@ package nyc.c4q.ashiquechowdhury.adoptme.model;
 public class Zip {
     private String $t;
 
-    public String get$t() {
+    public String getZipCode() {
         return $t;
     }
 }

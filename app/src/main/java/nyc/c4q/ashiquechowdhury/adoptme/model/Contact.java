@@ -7,6 +7,9 @@ public class Contact {
     Phone phone;
     State state;
     Email email;
+    City city;
+    Zip zip;
+    Address address1;
 
     public Phone getPhone() {
         return phone;
@@ -32,7 +35,4 @@ public class Contact {
         return zip;
     }
 
-    City city;
-    Zip zip;
-    Address address1;
 }

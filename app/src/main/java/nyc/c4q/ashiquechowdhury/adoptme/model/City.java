@@ -6,7 +6,7 @@ package nyc.c4q.ashiquechowdhury.adoptme.model;
 public class City {
     private String $t;
 
-    public String get$t() {
+    public String getCity() {
         return $t;
     }
 }
